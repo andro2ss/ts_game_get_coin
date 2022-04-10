@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FooterAB from "./common/footer/FooterAB";
 import { Container } from "@mui/material";
+import "animate.css";
 import Home from "./pages/home/Home";
 import Game from "./pages/game/Game";
 
