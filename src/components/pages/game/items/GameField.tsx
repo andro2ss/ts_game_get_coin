@@ -1,15 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { UserPosition } from "../../../../redux/reducers/userPos";
+
 interface GameField {
   fieldNr: number;
+  userPos: number;
+  targetPos: number;
 }
-export function GameField({ fieldNr }: GameField) {
-  const tempUserPos = useSelector((state: UserPosition) => state.userPos);
+
+export function GameField({ fieldNr, userPos, targetPos }: GameField) {
+  const tempUserPos = userPos;
+  const tempTargetPos = targetPos;
 
   return (
     <div className="game__field">
       {fieldNr === tempUserPos ? <div className="user" /> : ""}
+      {fieldNr === tempTargetPos && tempTargetPos !== tempUserPos ? (
+        <div className="target" />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
