@@ -11,3 +11,17 @@ export const setUserPos = (value: number) => {
     payload: value,
   };
 };
+
+export const setUserScore = (value: number) => {
+  return {
+    type: "SETUSERSCORE",
+    payload: value,
+  };
+};
+
+export const setTargetPos = (value: number) => {
+  return {
+    type: "SETTARGETPOS",
+    payload: value,
+  };
+};
