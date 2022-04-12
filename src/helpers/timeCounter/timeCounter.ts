@@ -1,4 +1,4 @@
-export default function timeToEndRound(currentTime: Date, endTime: Date) {
+export default function timeCounter(currentTime: Date, endTime: Date) {
   const toDate = endTime.getTime();
   const now = currentTime.getTime();
 
