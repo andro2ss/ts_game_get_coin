@@ -1,6 +1,6 @@
 export const targetPos = (state: number = 55, action: any) => {
   switch (action.type) {
-    case "SETUSERPOS":
+    case "SETTARGETPOS":
       return action.payload;
     default:
       return state;
@@ -10,3 +10,10 @@ export const targetPos = (state: number = 55, action: any) => {
 export interface TargetPosition {
   targetPos: number;
 }
+
+export const setTargetPos = (value: number) => {
+  return {
+    type: "SETTARGETPOS",
+    payload: value,
+  };
+};

@@ -10,3 +10,10 @@ export const userScore = (state: number = -1, action: any) => {
 export interface UserScore {
   userScore: number;
 }
+
+export const setUserScore = (value: number) => {
+  return {
+    type: "SETUSERSCORE",
+    payload: value,
+  };
+};

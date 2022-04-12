@@ -10,3 +10,10 @@ export const userPos = (state: number = 55, action: any) => {
 export interface UserPosition {
   userPos: number;
 }
+
+export const setUserPos = (value: number) => {
+  return {
+    type: "SETUSERPOS",
+    payload: value,
+  };
+};
