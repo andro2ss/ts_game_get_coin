@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { setTargetPos } from "../../../redux/reducers/targetPos";
 import { setUserPos } from "../../../redux/reducers/userPos";
 import { setGameRound } from "../../../redux/reducers/gameRound";
+import { setMonstersPos } from "../../../redux/reducers/monstersPos";
 
 function Result() {
   const userScore = useSelector((state: UserScore) => state.userScore);
@@ -19,6 +20,7 @@ function Result() {
           dispatch(setTargetPos(55));
           dispatch(setUserPos(55));
           dispatch(setGameRound(1));
+          dispatch(setMonstersPos([]));
         }}
       >
         <Link to="/play" className="logged__btn logged__btn--start">
