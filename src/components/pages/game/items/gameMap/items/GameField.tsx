@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { UserPosition } from "../../../../../../redux/reducers/userPos";
 import { TargetPosition } from "../../../../../../redux/reducers/targetPos";
+import { MonstersPosition } from "../../../../../../redux/reducers/monstersPos";
 
 interface GameFieldInterface {
   fieldNr: number;
@@ -12,6 +13,9 @@ export function GameField({ fieldNr }: GameFieldInterface) {
   const targetPosition = useSelector(
     (state: TargetPosition) => state.targetPos
   );
+  const monstersPosition = useSelector(
+    (state: MonstersPosition) => state.monstersPos
+  );
 
   return (
     <div className="game__field">
@@ -21,6 +25,15 @@ export function GameField({ fieldNr }: GameFieldInterface) {
       ) : (
         ""
       )}
+      {monstersPosition.length > 0
+        ? monstersPosition
+            .filter((item) => {
+              return item === fieldNr;
+            })
+            .map((item) => {
+              return <div className="monster" key={"Monster" + item} />;
+            })
+        : ""}
     </div>
   );
 }
