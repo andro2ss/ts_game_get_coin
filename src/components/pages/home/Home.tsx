@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setGameUser } from "../../../redux/actions";
-import { User } from "../../../redux/reducers/gameUser";
-import setLocalGameUser from "../../../helpers/setLocalGameUser";
+import setLocalGameUser from "../game/helpers/setLocalGameUser";
 import "./Home.scss";
 import { LoginUser } from "./items/LoginUser";
 import { LoggedUser } from "./items/LoggedUser";
 import { GameInstructions } from "./items/GameInstructions";
+import {
+  GameUserName,
+  setGameUserName,
+} from "../../../redux/reducers/gameUserName";
 
 function Home() {
   const [user, setUser] = useState("");
   const dispatch = useDispatch();
-  const tempGameUser = useSelector((state: User) => state.gameUser);
+  const tempGameUser = useSelector((state: GameUserName) => state.gameUserName);
 
   if (tempGameUser === "" && localStorage["gameUser"]) {
-    dispatch(setGameUser(JSON.parse(localStorage.getItem("gameUser") || "")));
+    dispatch(
+      setGameUserName(JSON.parse(localStorage.getItem("gameUser") || ""))
+    );
   }
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    dispatch(setGameUser(user));
+    dispatch(setGameUserName(user));
     setLocalGameUser(user);
   };
 
@@ -40,7 +44,7 @@ function Home() {
           tempGameUser={tempGameUser}
           onClick={() => {
             setLocalGameUser("");
-            dispatch(setGameUser(""));
+            dispatch(setGameUserName(""));
           }}
         />
       )}
