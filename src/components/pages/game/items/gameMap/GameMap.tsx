@@ -19,6 +19,7 @@ import moveControl from "../../helpers/moveControl";
 import newTargetPosition from "../../helpers/newTargetPosition";
 import { GameUserDirection } from "../../../../../redux/reducers/gameUserDirection";
 import { GameRound } from "../../../../../redux/reducers/gameRound";
+import { MonstersPosition } from "../../../../../redux/reducers/monstersPos";
 
 function GameMap() {
   const [gameFields, setGameFields] = useState<number[]>();
@@ -35,6 +36,9 @@ function GameMap() {
   const targetPosition = useSelector(
     (state: TargetPosition) => state.targetPos
   );
+  const monstersPosition = useSelector(
+    (state: MonstersPosition) => state.monstersPos
+  );
   const userScore = useSelector((state: UserScore) => state.userScore);
 
   useEffect(() => {
@@ -44,6 +48,12 @@ function GameMap() {
     if (userPosition === targetPosition) {
       dispatch(setUserScore(userScore + 1));
       dispatch(setTargetPos(newTargetPosition(userPosition)));
+    }
+
+    for (let i = 0; i < monstersPosition.length; i++) {
+      if (userPosition === monstersPosition[i]) {
+        navigate("/result", { replace: true });
+      }
     }
 
     if (userPosition !== 999) {
