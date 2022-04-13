@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { UserPosition } from "../../../../../../redux/reducers/userPos";
 import { TargetPosition } from "../../../../../../redux/reducers/targetPos";
 import { MonstersPosition } from "../../../../../../redux/reducers/monstersPos";
+import uniId from "../../../../../../helpers/UniqeID";
+import "./GameField.scss";
 
 interface GameFieldInterface {
   fieldNr: number;
@@ -31,7 +33,7 @@ export function GameField({ fieldNr }: GameFieldInterface) {
               return item === fieldNr;
             })
             .map((item) => {
-              return <div className="monster" key={"Monster" + item} />;
+              return <div className="monster" key={uniId()} />;
             })
         : ""}
     </div>

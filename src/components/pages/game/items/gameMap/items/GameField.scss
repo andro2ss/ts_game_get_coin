@@ -1,0 +1,36 @@
+.game__field {
+  width: 10%;
+  padding-top: 5%;
+  border: 1px solid black;
+  position: relative;
+
+  .user {
+    position: absolute;
+    background: lawngreen;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .target {
+    position: absolute;
+    background: gold;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .monster {
+    position: absolute;
+    background: #ff0000;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
