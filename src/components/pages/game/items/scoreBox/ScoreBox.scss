@@ -1,0 +1,25 @@
+.game__scoreBox {
+  display: flex;
+  column-gap: 1rem;
+
+  .scoreBox {
+    &__title {
+      span {
+        font-size: 2rem;
+        animation: bounce;
+        animation-duration: 800ms;
+      }
+    }
+
+    &__infoBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .score{
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
