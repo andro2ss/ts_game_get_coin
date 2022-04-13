@@ -31,12 +31,12 @@ function Result() {
   }
 
   useEffect(() => {
-    if (serverControl === "rdyToSend") {
+    if (serverControl === "rdyToSend" && userName !== "") {
       setServerControl("sending");
       sendScoreToServer(userName, userScore, gameRound).then(() => {
         setServerControl("dataSend");
       });
-    } else if (serverControl === "dataSend") {
+    } else if (serverControl === "dataSend" || userName === "") {
       onSnapshot(collection(db, "gameboard"), (snapshot) => {
         setGameboard(
           snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
