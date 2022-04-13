@@ -75,4 +75,42 @@
     }
   }
 
+  &__instructions{
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      li{
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+
+    .gold{
+      min-width: 30px;
+      height: 30px;
+      background: gold;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .green{
+      min-width: 30px;
+      height: 30px;
+      background: lawngreen;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .red{
+      min-width: 30px;
+      height: 30px;
+      background: #ff0000;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+
+  }
 }
