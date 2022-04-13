@@ -1,0 +1,37 @@
+@mixin btn_common {
+  background: cornflowerblue;
+  border: 1px solid darkblue;
+  padding: 1rem;
+
+  &:hover{
+    background: aquamarine;
+  }
+}
+
+$gridGap: 0.4rem;
+
+.game__arrowBox{
+  margin-top: 1rem;
+  display: flex;
+  column-gap: $gridGap;
+  padding: $gridGap;
+  justify-content: center;
+
+  .arrowBox{
+    &__box{
+      display: flex;
+      flex-direction: column;
+      row-gap: $gridGap;
+      width: 30%;
+
+      button{
+        @include btn_common;
+        width: 100%;
+      }
+    }
+    &__btn{
+      @include btn_common;
+      //width: 15%;
+    }
+  }
+}
