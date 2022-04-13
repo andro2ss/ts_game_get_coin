@@ -13,12 +13,28 @@ export function GameInstructions() {
         odpowiedni przycisk strzałki
       </span>
       <span>
+        <h3>Legenda</h3>
+        <ul>
+          Grafika jest mocno symboliczna, kolorowe pola oznaczają:
+          <li>
+            <div className="gold"></div> Moneta (cel dający punkty)
+          </li>
+          <li>
+            <div className="green"></div> Postać gracza
+          </li>
+          <li>
+            <div className="red"></div> Potwór, spotkanie z nim kończy grę
+          </li>
+        </ul>
+      </span>
+      <span>
         <h3>Zasady</h3>
         <ul>
           <li>Wyjście za mapę kończy grę</li>
-          <li>Wejście na minę kończy grę</li>
+          <li>Wejście na potwora kończy grę - uwaga czasem są ruchliwe :)</li>
           <li>
-            Wraz z kolejnymi rundami gra będzie przyśpieszać, a ilość min rosnąć
+            Wraz z kolejnymi rundami gra będzie przyśpieszać, a ilość potworów
+            rosnąć
           </li>
         </ul>
       </span>
