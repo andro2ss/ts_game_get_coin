@@ -5,5 +5,6 @@
 }
 
 .app__container {
-  border: 1px black solid;
+  animation: bounceInDown;
+  animation-duration: 1s;
 }
