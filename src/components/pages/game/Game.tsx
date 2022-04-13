@@ -1,7 +1,7 @@
 import React from "react";
 import "./Game.scss";
-import { ScoreBox } from "./items/ScoreBox";
-import ArrowBtnControls from "./items/ArrowBtnControls";
+import { ScoreBox } from "./items/scoreBox/ScoreBox";
+import ArrowBtnControlsBox from "./items/arrowBtnControlsBox/ArrowBtnControlsBox";
 import GameMap from "./items/gameMap/GameMap";
 import { keyboardControl } from "./helpers/keyboardControl";
 import { useDispatch } from "react-redux";
@@ -13,12 +13,11 @@ function Game() {
   document.addEventListener("keydown", (e) => {
     dispatch(setGameUserDirection(keyboardControl(e)));
   });
-
   return (
     <div className="game__container">
       <ScoreBox />
       <GameMap />
-      <ArrowBtnControls />
+      <ArrowBtnControlsBox />
     </div>
   );
 }
