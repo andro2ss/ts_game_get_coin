@@ -1,0 +1,46 @@
+@mixin tableRow{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  span{
+    display: block;
+    border: 1px solid darkgoldenrod;
+    padding: 0.2rem;
+    width: 65px;
+    text-align: center;
+    &:nth-child(1){
+      width: 30px;
+    }
+    &:nth-child(2){
+      min-width: 30%;
+    }
+  }
+}
+
+.result__table{
+  animation: zoomIn;
+  animation-duration: 2s;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-wrap: break-word;
+  align-items: center;
+
+  .table{
+    &__title{
+      margin: 1rem 0;
+      font-size: 1.5rem;
+    }
+
+    &__header{
+      @include tableRow;
+      font-weight: 600;
+    }
+    &__content{
+      @include tableRow;
+    }
+  }
+}
