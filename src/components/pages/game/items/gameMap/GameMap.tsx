@@ -19,7 +19,12 @@ import moveControl from "../../helpers/moveControl";
 import newTargetPosition from "../../helpers/newTargetPosition";
 import { GameUserDirection } from "../../../../../redux/reducers/gameUserDirection";
 import { GameRound } from "../../../../../redux/reducers/gameRound";
-import { MonstersPosition } from "../../../../../redux/reducers/monstersPos";
+import {
+  MonstersPosition,
+  setMonstersPos,
+} from "../../../../../redux/reducers/monstersPos";
+import moveMonsters from "../../helpers/moveMonsters";
+import "./GameMap.scss";
 
 function GameMap() {
   const [gameFields, setGameFields] = useState<number[]>();
@@ -47,12 +52,17 @@ function GameMap() {
     //Get Point
     if (userPosition === targetPosition) {
       dispatch(setUserScore(userScore + 1));
-      dispatch(setTargetPos(newTargetPosition(userPosition)));
+      dispatch(setTargetPos(newTargetPosition(userPosition, monstersPosition)));
     }
 
     for (let i = 0; i < monstersPosition.length; i++) {
       if (userPosition === monstersPosition[i]) {
         navigate("/result", { replace: true });
+      }
+      if (targetPosition === monstersPosition[i]) {
+        dispatch(
+          setTargetPos(newTargetPosition(userPosition, monstersPosition))
+        );
       }
     }
 
@@ -61,12 +71,13 @@ function GameMap() {
       const gameInterval = setInterval(() => {
         setGameStep(gameStep + 1);
         dispatch(setUserPos(moveControl(userPosition, gameUserDir)));
-      }, Math.floor(1000 / gameRound));
+        dispatch(setMonstersPos(moveMonsters(monstersPosition)));
+      }, Math.floor(500 / gameRound));
       return () => clearInterval(gameInterval);
     } else {
       navigate("/result", { replace: true });
     }
-  }, [gameFields, gameStep, gameUserDir]);
+  }, [gameFields, gameStep, gameUserDir, monstersPosition]);
   return (
     <div className="game__mapBox">
       {!gameFields
