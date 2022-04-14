@@ -25,6 +25,7 @@ import {
 } from "../../../../../redux/reducers/monstersPos";
 import moveMonsters from "../../helpers/moveMonsters";
 import "./GameMap.scss";
+import { GameUserName } from "../../../../../redux/reducers/gameUserName";
 
 function GameMap() {
   const [gameFields, setGameFields] = useState<number[]>();
@@ -33,6 +34,7 @@ function GameMap() {
   const navigate = useNavigate();
 
   // REDUX Variable
+  const userName = useSelector((state: GameUserName) => state.gameUserName);
   const gameRound = useSelector((state: GameRound) => state.gameRound);
   const gameUserDir = useSelector(
     (state: GameUserDirection) => state.gameUserDirection
@@ -48,6 +50,10 @@ function GameMap() {
 
   useEffect(() => {
     createMap(gameFields, setGameFields);
+
+    if (userName === "") {
+      navigate("/", { replace: true });
+    }
 
     //Get Point
     if (userPosition === targetPosition) {

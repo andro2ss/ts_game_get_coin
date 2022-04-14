@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserScore, UserScore } from "../../../redux/reducers/userScore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setTargetPos } from "../../../redux/reducers/targetPos";
 import { setUserPos } from "../../../redux/reducers/userPos";
 import { GameRound, setGameRound } from "../../../redux/reducers/gameRound";
@@ -21,6 +21,7 @@ function Result() {
   const gameRound = useSelector((state: GameRound) => state.gameRound);
   const userName = useSelector((state: GameUserName) => state.gameUserName);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function btnHandle() {
     dispatch(setUserScore(-1));
@@ -31,6 +32,10 @@ function Result() {
   }
 
   useEffect(() => {
+    if (userName === "") {
+      navigate("/", { replace: true });
+    }
+
     if (serverControl === "rdyToSend" && userName !== "") {
       setServerControl("sending");
       sendScoreToServer(userName, userScore, gameRound).then(() => {
