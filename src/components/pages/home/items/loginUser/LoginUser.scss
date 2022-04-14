@@ -1,0 +1,32 @@
+.home{
+  &__login {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    text-align: center;
+
+    .login {
+      &__input {
+        padding: 10px;
+        max-width: 80%;
+        border: darkgoldenrod 3px solid;
+        color: darkgoldenrod;
+        font-family: 'My Soul', cursive;
+        text-align: center;
+        font-size: 2rem;
+
+
+        &:focus{
+          font-weight: 600;
+          color: white;
+          background: goldenrod;
+        }
+      }
+
+    }
+  }
+
+}

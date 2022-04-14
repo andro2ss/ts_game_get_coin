@@ -1,4 +1,5 @@
 import React from "react";
+import "./LoginUser.scss";
 
 export function LoginUser(props: {
   onSubmit: (e: any) => void;
@@ -6,7 +7,7 @@ export function LoginUser(props: {
 }) {
   return (
     <form className="home__login" onSubmit={props.onSubmit}>
-      <span className="login__desc">Cześć, jak mam Cię zapamiętać?</span>
+      <span>Cześć, jak mam Cię zapamiętać?</span>
       <input className="login__input" type="text" onChange={props.onChange} />
     </form>
   );
