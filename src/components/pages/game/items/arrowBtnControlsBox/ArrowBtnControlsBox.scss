@@ -1,14 +1,17 @@
 @mixin btn_common {
-  background: cornflowerblue;
-  border: 1px solid darkblue;
+  background: snow;
+  border: 3px solid darkgoldenrod;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover{
-    background: aquamarine;
+    background: gold;
   }
 }
 
-$gridGap: 0.4rem;
+$gridGap: 1rem;
 
 .game__arrowBox{
   margin-top: 1rem;
@@ -27,11 +30,12 @@ $gridGap: 0.4rem;
       button{
         @include btn_common;
         width: 100%;
+        height: 6vh;
       }
     }
     &__btn{
       @include btn_common;
-      //width: 15%;
+      width: 30%;
     }
   }
 }

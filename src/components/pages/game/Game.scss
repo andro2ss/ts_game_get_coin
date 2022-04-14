@@ -1,7 +1,11 @@
 .game {
   &__container {
+    background: snow;
+    padding: 1rem;
+    border: 2px solid darkgoldenrod;
+    border-radius: 2rem;
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
   }
 }

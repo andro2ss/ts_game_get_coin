@@ -60,7 +60,17 @@ function Result() {
         }}
       >
         <Link to="/play" className="btn__playAgain ">
-          <span>Zagraj ponownie</span>
+          Zagraj ponownie
+        </Link>
+      </button>
+      <button
+        className="result__btn"
+        onClick={() => {
+          btnHandle();
+        }}
+      >
+        <Link to="/" className="btn__home ">
+          Instrukcja
         </Link>
       </button>
       {gameboard ? (

@@ -2,6 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { setGameUserDirection } from "../../../../../redux/reducers/gameUserDirection";
 import "./ArrowBtnControlsBox.scss";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 function ArrowBtnControlsBox() {
   const dispatch = useDispatch();
@@ -18,7 +22,7 @@ function ArrowBtnControlsBox() {
           changeMoveDirection("left");
         }}
       >
-        {"<-"}
+        <ArrowBackIcon sx={{ fontSize: 40, color: "goldenrod" }} />
       </button>
       <div className="arrowBox__box">
         <button
@@ -27,7 +31,7 @@ function ArrowBtnControlsBox() {
             changeMoveDirection("up");
           }}
         >
-          /\
+          <ArrowUpwardIcon sx={{ fontSize: 40, color: "goldenrod" }} />
         </button>
         <button
           className="arrowBox__btn "
@@ -35,7 +39,7 @@ function ArrowBtnControlsBox() {
             changeMoveDirection("down");
           }}
         >
-          \/{" "}
+          <ArrowDownwardIcon sx={{ fontSize: 40, color: "goldenrod" }} />
         </button>
       </div>
 
@@ -45,7 +49,7 @@ function ArrowBtnControlsBox() {
           changeMoveDirection("right");
         }}
       >
-        {"->"}
+        <ArrowForwardIcon sx={{ fontSize: 40, color: "goldenrod" }} />
       </button>
     </div>
   );

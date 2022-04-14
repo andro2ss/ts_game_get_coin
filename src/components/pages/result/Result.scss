@@ -1,11 +1,33 @@
+@mixin links {
+  display: block;
+  margin: 1rem auto;
+  border: 2px solid darkgoldenrod;
+  border-radius: 1rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: darkgoldenrod;
+  cursor: pointer;
+  max-width: 400px;
+  text-decoration: none;
+  font-weight: 700;
+  &:hover {
+    color: white;
+    background: goldenrod;
+  }
+}
+
 .result {
   &__container {
+    background: snow;
+    padding: 1rem;
+    border: 2px solid darkgoldenrod;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .spinner{
+    .spinner {
       margin-top: 3rem;
     }
   }
@@ -28,6 +50,8 @@
     font-family: 'My Soul', cursive;
     font-size: 2rem;
     margin: 0;
+    color: goldenrod;
+    font-weight: 700;
   }
 
   &__userScore {
@@ -47,27 +71,26 @@
     }
   }
 
-  &__btn{
+  &__btn {
     border: none;
     background: inherit;
     width: 80%;
     padding: 0;
     margin: 0;
 
-    .btn__playAgain{
-      display: block;
-      margin: 1rem auto;
-      border: 2px solid darkgoldenrod;
-      border-radius: 1rem;
-      width: 100%;
-      padding: 0.5rem 1rem;
-      color: darkgoldenrod;
-      text-decoration: none;
-      cursor: pointer;
-      max-width: 400px;
-      &:hover{
-        color: white;
-        background: goldenrod;
+
+    .btn {
+      &__playAgain {
+        @include links;
+      }
+
+      &__home {
+        @include links;
+        color: black;
+        &:hover {
+          color: goldenrod;
+          background: white;
+        }
       }
     }
   }
