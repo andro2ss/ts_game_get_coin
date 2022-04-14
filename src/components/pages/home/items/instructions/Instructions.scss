@@ -1,0 +1,78 @@
+@mixin square {
+  display: inline-block;
+  margin-right: 1rem;
+  min-width: 30px;
+  height: 30px;
+}
+
+.home {
+  &__instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .instructions {
+      &__title {
+        margin: 0;
+      }
+
+      &__box {
+        border-top: goldenrod dashed 1px;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        max-width: 800px;
+        width: 100%;
+
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          align-items: center;
+
+          li {
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+          }
+        }
+
+        .box {
+          &__title {
+            margin: 0 0 0.5rem 0;
+          }
+
+          &__desc {
+            p {
+              margin: 0.3rem 0;
+              border-bottom: 0.01rem solid goldenrod;
+              padding: 0.1rem;
+              &:last-child{
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    .gold {
+      @include square;
+      background: gold;
+    }
+
+    .green {
+      @include square;
+      background: lawngreen;
+    }
+
+    .red {
+      @include square;
+      background: #ff0000;
+    }
+  }
+}
