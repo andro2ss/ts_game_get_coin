@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import setLocalGameUser from "../game/helpers/setLocalGameUser";
 import "./Home.scss";
-import { LoginUser } from "./items/LoginUser";
-import { LoggedUser } from "./items/LoggedUser";
-import { GameInstructions } from "./items/GameInstructions";
+import { LoginUser } from "./items/loginUser/LoginUser";
+import { LoggedUser } from "./items/loggedUser/LoggedUser";
+import { Instructions } from "./items/instructions/Instructions";
 import {
   GameUserName,
   setGameUserName,
@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div className="home__container">
-      <h1 className="home__title">Zbierz monetę</h1>
+      <h1 className="home__title">Get Coin</h1>
       {tempGameUser === "" ? (
         <LoginUser
           onSubmit={(e) => {
@@ -48,7 +48,7 @@ function Home() {
           }}
         />
       )}
-      <GameInstructions />
+      <Instructions />
     </div>
   );
 }

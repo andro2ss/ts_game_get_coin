@@ -1,116 +1,20 @@
 .home {
-  &__login {
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 1rem;
-
-    .login {
-      &__input {
-        padding: 10px;
-      }
-
-    }
+  &__container {
+    background: snow;
+    padding: 1rem;
+    border: 2px solid darkgoldenrod;
+    border-radius: 2rem;
   }
 
-  &__logged {
+  &__title {
+    font-family: 'My Soul', cursive;
     text-align: center;
-
-    .logged {
-      &__text {
-        font-size: 1.2rem;
-      }
-
-      &__user {
-        font-size: 1.5rem;
-      }
-
-      &__box {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 1rem;
-        column-gap: 4rem;
-      }
-
-      &__btn {
-        width: 200px;
-        height: 50px;
-        border: black solid 2px;
-        cursor: pointer;
-        border-radius: 25px;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-
-        &--start {
-          border-color: lawngreen;
-          font-size: 1.5rem;
-
-          &:hover {
-            background: lightgreen;
-
-            span {
-              animation: flash;
-              animation-duration: 800ms;
-            }
-
-          }
-        }
-
-        &--logout {
-          border-color: darkred;
-          background: white;
-
-          &:hover {
-            background: indianred;
-          }
-        }
-      }
-    }
-  }
-
-  &__instructions{
-    ul{
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-
-      li{
-        margin-top: 0.5rem;
-        display: flex;
-        align-items: center;
-      }
-    }
-
-
-    .gold{
-      min-width: 30px;
-      height: 30px;
-      background: gold;
-      display: inline-block;
-      margin-right: 1rem;
-    }
-    .green{
-      min-width: 30px;
-      height: 30px;
-      background: lawngreen;
-      display: inline-block;
-      margin-right: 1rem;
-    }
-    .red{
-      min-width: 30px;
-      height: 30px;
-      background: #ff0000;
-      display: inline-block;
-      margin-right: 1rem;
-    }
-
-
+    font-size: 3rem;
+    margin: 1rem auto;
+    color: gold;
+    animation-name: goldChange;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 }
