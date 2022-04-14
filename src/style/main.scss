@@ -1,4 +1,6 @@
 @import "./normalize.css";
+@import "./fonts.scss";
+@import "./animations.scss";
 
 * {
   box-sizing: border-box;
@@ -7,4 +9,5 @@
 .app__container {
   animation: bounceInDown;
   animation-duration: 1s;
+  font-family: 'Raleway', sans-serif;
 }
