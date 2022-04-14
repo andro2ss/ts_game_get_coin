@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=My+Soul&display=swap');
-
 .result {
   &__container {
     display: flex;
@@ -18,9 +16,11 @@
     font-size: 3rem;
     margin: 1rem auto;
     color: gold;
-    animation-name: colorful;
+    animation-name: goldChange;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
+
   }
 
   &__user {
@@ -74,20 +74,3 @@
 }
 
 
-@keyframes colorful {
-  0% {
-    color: gold;
-  }
-  25% {
-    color: goldenrod;
-  }
-  50% {
-    color: darkgoldenrod;
-  }
-  75% {
-    color: goldenrod;
-  }
-  100% {
-    color: gold;
-  }
-}
