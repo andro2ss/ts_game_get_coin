@@ -37,6 +37,7 @@ export function Instructions() {
         <h3 className="box__title">Zasady</h3>
         <span className="box__desc">
           <p>Zebranie monety daje +1 punkt</p>
+          <p>Przetrwanie do kolejnej rundy daje +10 punktów</p>
           <p>Wyjście za mapę kończy grę</p>
           <p>Spotkanie z "potworem" kończy grę - uwaga czasem są ruchliwe :)</p>
           <p>

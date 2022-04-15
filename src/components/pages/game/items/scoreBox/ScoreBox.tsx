@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { UserScore } from "../../../../../redux/reducers/userScore";
+import {
+  setUserScore,
+  UserScore,
+} from "../../../../../redux/reducers/userScore";
 import { setEndTime } from "../../../../../helpers/timeCounter/setEndTime";
 import timeCounter from "../../../../../helpers/timeCounter/timeCounter";
 import {
@@ -42,6 +45,7 @@ export function ScoreBox() {
         if (stateControl === 1) {
           setTempEndDate(setEndTime());
           dispatch(setGameRound(currentRound + 1));
+          dispatch(setUserScore(userScore + 10));
           dispatch(
             setMonstersPos(
               newMonsterPosition(userPosition, targetPosition, currentRound)
