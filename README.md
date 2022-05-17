@@ -22,7 +22,10 @@ A simple game to collect as many coins as possible
 * TypeScript
 * React
 * SCSS
-* Firestore / Firebase
+* React Redux
+* React Router
+* Firestore
+* Firebase
 * MUI
 
 ## Setup
